@@ -1,14 +1,17 @@
 from typing import Optional
+import base26
 
 class Utilities:
     def base26_decode(input_str) -> int:
-        out = 0
-        input_bytes = input_str.encode('utf-8')
+        return int.from_bytes(base26.decode(input_str), "big")
+        
+        # out = 0
+        # input_bytes = input_str.encode('utf-8')
 
-        for val in input_bytes[::-1]:
-            out *= 26
-            out += val - ord('A')
-        return out
+        # for val in input_bytes[::-1]:
+        #     out *= 26
+        #     out += val - ord('A')
+        # return out
     
     
     def strip_padding(tkt: bytes) -> Optional[bytes]:

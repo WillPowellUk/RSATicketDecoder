@@ -1,2 +1,5 @@
 math
 typing
+json
+numpy
+base26
